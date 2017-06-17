@@ -1,1 +1,1 @@
-# react-tabs
+# React Tabs
