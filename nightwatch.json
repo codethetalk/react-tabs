@@ -1,7 +1,0 @@
-{
-  "launch_url": "http://localhost:3000",
-  "silent": true,
-  "desiredCapabilities": {
-    "browserName": "chrome"
-  }
-}
