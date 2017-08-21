@@ -16,8 +16,6 @@ or if you use [yarn](https://github.com/yarnpkg/yarn)
 
 For all following commands, you can just replace `npm` with `yarn` if yarn is what you are using.
 
-To build and run the application in a development server with [hot reloading](https://github.com/webpack/docs/wiki/hot-module-replacement-with-webpack):
-
 `npm start`
 
 A dev server will be started on port 3000. You can configure the dev server in webpack.config.js.
