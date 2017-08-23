@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import createHistory from 'history/createBrowserHistory'
 import { Route, Link } from 'react-router-dom'
 import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
+import { reducer as formReducer } from 'redux-form';
 
 import App from './components/app/app'
 import reducers from './reducers'
@@ -18,7 +19,7 @@ const sagaMiddleware = createSagaMiddleware()
 const history = createHistory()
 const middleware = routerMiddleware(history)
 const store = createStore(
-    combineReducers(Object.assign(reducers, { router: routerReducer })),
+    combineReducers(Object.assign(reducers, { router: routerReducer, form: formReducer })),
     applyMiddleware(middleware, sagaMiddleware)
 )
 

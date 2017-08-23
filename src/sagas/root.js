@@ -59,7 +59,6 @@ function* fetchTicketDtosSaga(payload) {
 }
 
 function* fetchTicketSaga(payload) {
-    debugger
     const { isError, response } = yield call(fetchResources)
     if (!isError) {
         yield put({

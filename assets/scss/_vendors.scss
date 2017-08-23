@@ -1,3 +1,10 @@
+$fa-font-path: "../../node_modules/font-awesome/fonts";
+@import "../../node_modules/font-awesome/scss/_variables";
+@import "../../node_modules/font-awesome/scss/_mixins";
+@import "../../node_modules/font-awesome/scss/_path";
+@import "../../node_modules/font-awesome/scss/_core";
+@import "../../node_modules/font-awesome/scss/_icons";
+
 @import '../../node_modules/foundation-sites/_vendor/normalize-scss/sass/normalize';
 @import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/helpers/missing-dependencies';
 @import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/helpers/true';
@@ -6,10 +13,8 @@
 @import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/functions/remove';
 @import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/functions/replace';
 @import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/functions/to-list';
-
 @import '../../node_modules/foundation-sites/scss/util/util';
 @import '../../node_modules/foundation-sites/scss/global';
-
 @import '../../node_modules/foundation-sites/scss/grid/grid';
 @import '../../node_modules/foundation-sites/scss/xy-grid/xy-grid';
 @import '../../node_modules/foundation-sites/scss/typography/typography';

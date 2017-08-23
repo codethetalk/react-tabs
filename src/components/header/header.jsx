@@ -12,9 +12,9 @@ class Header extends React.Component {
             <div className="top-bar">
                 <div className="top-bar-left">
                     <ul className="menu">
-                        <li><NavLink className="nav-item" exact to="/" activeStyle={{ fontWeight: 'bold', color: 'red' }}>Home</NavLink></li>
+                        <li><NavLink className="nav-item" exact to="/" activeStyle={{ fontWeight: 'bold', color: 'red' }}><i className="fa fa-home"> </i></NavLink></li>
                         {authenticated ? ticketDTOs.map((r, index) =>
-                            <li key={index}><NavLink className="nav-item" to={`/ticket/${r.id}`} activeStyle={{ fontWeight: 'bold', color: 'red' }}>{r.name}</NavLink></li>
+                            <li key={index}><NavLink className="nav-item" to={`/ticket/${r.id}`} activeStyle={{ fontWeight: 'bold', color: 'red' }}>{r.firstName}</NavLink></li>
                         ) :
                             <li><NavLink className="nav-item" to="/login" activeStyle={{ fontWeight: 'bold', color: 'red' }}>Login</NavLink></li>}
                     </ul>

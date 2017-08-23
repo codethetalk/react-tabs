@@ -4,6 +4,8 @@ export const TICKETDTOS_GET = 'ticketdtos_get'
 export const TICKETDTOS_RECIEVED = 'ticketdtos_recieved'
 export const TICKET_GET = 'ticket_get'
 export const TICKET_RECIEVED = 'ticket_recieved'
+export const TICKET_UPDATED = 'ticket_updated'
+
 
 export const authenticate = payload => {
     return {
@@ -35,4 +37,9 @@ export const getTicket = payload => ({
 export const recievedTicket = payload => ({
     type: TICKET_RECIEVED,
     payload,
+})
+
+export const updateTicket = payload => ({
+    type: TICKET_UPDATED,
+    payload
 })
