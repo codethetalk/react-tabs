@@ -4,18 +4,22 @@ import { authenticate } from '../actions'
 
 const login = async (payload) => {
     try {
-        const response = await fetch('http://localhost:3030/auth', {
+        const response = await fetch('http://localhost:8080/api/users/authenticate', {
             method: 'POST',
-            body: payload,
+            body: JSON.stringify(payload),
+            headers: {
+                "Content-Type": "application/json"
+            }
         })
         const data = await response.json()
+        localStorage.setItem('react-tabs-auth', JSON.stringify(data))
         return {
-            isError: true,
+            isError: false,
             response: data
         };
     } catch (e) {
         return {
-            isError: false,
+            isError: true,
             response: undefined
         };
     }
@@ -23,7 +27,13 @@ const login = async (payload) => {
 
 const fetchResources = async () => {
     try {
-        const response = await fetch('http://localhost:3001/resources', { method: 'GET' })
+        const storedAccess = JSON.parse(localStorage.getItem('react-tabs-auth'))
+        const response = await fetch('http://localhost:8080/api/tickets', {
+            method: 'GET',
+            headers: {
+                "Authorization": `Bearer ${storedAccess.access_token}`
+            }
+        })
         const data = await response.json()
         return {
             isError: false,
