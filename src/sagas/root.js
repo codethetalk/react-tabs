@@ -4,7 +4,8 @@ import { authenticate } from '../actions'
 
 const login = async (payload) => {
     try {
-        const response = await fetch('http://localhost:8080/api/users/authenticate', {
+        const endpoint = payload.email ? '' : '/authenticate'
+        const response = await fetch(`http://localhost:8080/api/users${endpoint}`, {
             method: 'POST',
             body: JSON.stringify(payload),
             headers: {
@@ -16,12 +17,12 @@ const login = async (payload) => {
         return {
             isError: false,
             response: data
-        };
+        }
     } catch (e) {
         return {
             isError: true,
             response: undefined
-        };
+        }
     }
 }
 
@@ -31,19 +32,19 @@ const fetchResources = async () => {
         const response = await fetch('http://localhost:8080/api/tickets', {
             method: 'GET',
             headers: {
-                "Authorization": `Bearer ${storedAccess.access_token}`
+                "Authorization": `Bearer ${storedAccess.access_token || storedAccess.id_token}`
             }
         })
         const data = await response.json()
         return {
             isError: false,
             response: data,
-        };
+        }
     } catch (e) {
         return {
             isError: true,
             response: undefined
-        };
+        }
     }
 }
 

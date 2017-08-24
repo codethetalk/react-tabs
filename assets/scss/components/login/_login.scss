@@ -2,34 +2,29 @@ $login-box-radius: $global-radius;
 $login-box-bg: $white;
 $login-box-shadow: 0 2px 4px rgba($black, 0.4);
 $login-box-inner-padding: 2.5rem;
-$login-box-social-bg: url('https://images.pexels.com/photos/179124/pexels-photo-179124.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb');
-$social-brand-facebook: #3b5998;
-$social-brand-twitter: #55acee;
-$social-brand-linkedin: #007bb5;
-$social-brand-youtube: #bb0000;
-$social-brand-instagram: #125688;
-$social-brand-pinterest: #cb2027;
-$social-brand-google-plus: #dd4b39;
-$social-brand-github: #000000;
-$social-brand-tumblr: #32506d;
-
 
 .login-box {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
   box-shadow: $login-box-shadow;
   background: $login-box-bg;
   border-radius: $login-box-radius;
   overflow: hidden;
-
-  .or {
-    @include absolute-center;
-    @include badge;
-    font-size: 1.275rem;
-    background: $medium-gray;
-    box-shadow: $login-box-shadow;
-
-    @include breakpoint(small only) {
-      top: 85%;
-    }
+  .outer {
+    width: 1px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+  .inner {
+    position: relative;
+    width:100%;
+    height: 40%;
+    background: grey;
+    top: 30%;
+    box-shadow: 0px 0px 30px 20px grey;
   }
 }
 
@@ -39,15 +34,8 @@ $social-brand-tumblr: #32506d;
   margin-bottom: 1.25rem;
 }
 
-.login-box-form-section,
-.login-box-social-section-inner {
+.login-box-form-section {
   padding: $login-box-inner-padding;
-}
-
-.login-box-social-section {
-  background: $login-box-social-bg;
-  background-size: cover;
-  background-position: center;
 }
 
 .login-box-input {
@@ -82,39 +70,5 @@ $social-brand-tumblr: #32506d;
 
 .login-box-submit-button:active {
   box-shadow: 0 1px 2px rgba($black, 0.4);
-}
-
-.login-box-social-button-facebook {
-  @include button(true, $social-brand-facebook, auto, auto, solid);
-  font-weight: 500;
-  margin-bottom: 1.25rem;
-  text-transform: uppercase;
-}
-
-.login-box-social-button-twitter {
-  @include button(true, $social-brand-twitter, auto, $white, solid);
-  font-weight: 500;
-  margin-bottom: 1.25rem;
-  text-transform: uppercase;
-}
-
-.login-box-social-button-google {
-  @include button(true, $social-brand-google-plus, auto, $white, solid);
-  font-weight: 500;
-  margin-bottom: 1.25rem;
-  text-transform: uppercase;
-}
-
-[class*="login-box-social-button-"]:hover,
-[class*="login-box-social-button-"]:focus {
-  box-shadow: $login-box-shadow;
-}
-
-.login-box-social-headline {
-  display: block;
-  margin-bottom: rem-calc(40);
-  font-size: 1.875rem;
-  color: $white;
-  text-align: center;
 }
 
