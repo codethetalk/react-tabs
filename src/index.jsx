@@ -13,7 +13,7 @@ import App from './components/app/app'
 import reducers from './reducers'
 import root from './sagas/root'
 import Login from './components/login/login'
-import Header from './components/header/header'
+import requireAuth from './containers/requireAuth'
 
 const sagaMiddleware = createSagaMiddleware()
 const history = createHistory()
@@ -28,9 +28,8 @@ ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
             <div>
-                <Header />
                 <Route path="/login" render={props => <Login {...props} />} />
-                <Route path="/" component={App} />
+                <Route path="/" component={requireAuth(App)} />
             </div>
         </ConnectedRouter>
     </Provider>,

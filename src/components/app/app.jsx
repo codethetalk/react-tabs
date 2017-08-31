@@ -1,13 +1,13 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-
-import requireAuth from '../../containers/requireAuth'
 import Ticket from '../ticket/ticket'
+import Header from '../header/header'
 
 export default () => {
     return (
         <div>
-            <Route path="/ticket/:id" component={requireAuth(Ticket)} />
+            <Header />
+            <Route path="/ticket/:id" component={Ticket} />
         </div>
     )
 }
